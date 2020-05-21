@@ -2,7 +2,7 @@ function kuupaevStringina(date) {
     return  date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear();
 }
 
-function testRida(matk) {
+function matkaRida(matk) {
     return (
         '<div class="col-lg-4 col-md-12 matkarida">' + 
             '<div class="card">' +
@@ -48,7 +48,7 @@ let matk = '';
 for (i = 0; i < matkad.length; i++) {
     const tana = new Date();
     if (tana < matkad[i].kuupaev) {
-        matk += testRida(matkad[i]); //matk = matkarida(matkad[i])
+        matk += matkaRida(matkad[i]); //matk = matkarida(matkad[i])
     }
 }
 
