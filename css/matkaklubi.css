@@ -1,0 +1,76 @@
+#section-header {
+    background-image: url('../images/Hills.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 980px;;
+}
+
+#section-header-row {
+    margin-top: 15px;
+}
+
+.peamenyy {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.peamenyy li {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    padding: 20px;
+    text-transform: uppercase;
+    color: black;
+}
+
+.peamenyy li a{
+    letter-spacing: 2.67px;
+    color: #000000 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+.peamenyy li a:hover{
+    color:gray !important;
+    text-decoration: none;
+}
+
+.caption-row {
+    padding-top: 185px;;
+}
+
+.caption1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+.butterfly1 {
+    display: inline-block;
+    width: 75px;
+    height: 66px;
+    background: transparent url('../images/Butterfly1.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.matkarida {
+    letter-spacing: 2.67px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+.matkarida img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.matkarida span {
+    padding-left: 15px;
+}
+
+
