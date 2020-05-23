@@ -23,7 +23,9 @@
               <img src="./images/matkaklubi_logo.PNG" width="67px">
             </span>
             <span class="logotekst">
-              MATKAKLUBI
+              <?
+                echo 'MATKAKLUBI KÕIGILE ';
+              ?>
             </span>
           </div>
           <div class="col-md-8">
@@ -59,7 +61,9 @@
       <div class="container" >
           <div class="row" id="matkadetailid">
             <div>
-                Siia tuleb matka info
+              <?php
+                echo 'Siia tuleb matka info, mis on väljastatud PHP-ga';
+              ?>
             </div>
           </div>
       </div>
