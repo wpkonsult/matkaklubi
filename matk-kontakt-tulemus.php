@@ -30,9 +30,9 @@
           </div>
           <div class="col-md-8">
             <?php
-              include 'matk-komponendid.php';
-              echo annaMenyy();
-            ?>
+include 'matk-komponendid.php';
+echo annaMenyy();
+?>
           </div>
         </div>
         <div class="row caption-row">
@@ -45,7 +45,6 @@
               <div class="butterfly2"></div>
               <span>TULE MATKAMA</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -53,11 +52,11 @@
     <div class="row" id="sektsioon-matkainfo">
       <div class="container" >
           <div class="row" id="matkadetailid">
-            <div>
-              <?php
-                echo 'Siia tuleb matka info, mis on väljastatud PHP-ga';
-              ?>
-            </div>
+                Tere <?php echo $_POST["name"]; ?><br>
+                Sinu emaili aadress on: <?php echo $_POST["email"]; ?>
+                <?php
+                  saadaEmail($_POST);
+                ?>
           </div>
       </div>
     </div>

@@ -23,21 +23,16 @@
               <img src="./images/matkaklubi_logo.PNG" width="67px">
             </span>
             <span class="logotekst">
-              MATKAKLUBI
+              <?
+                echo 'MATKAKLUBI KÕIGILE ';
+              ?>
             </span>
           </div>
           <div class="col-md-8">
-            <ul class="peamenyy">
-              <li>
-                <a href="#">Esileht</a>
-              </li>
-              <li>
-                <a href="#">Järgmised matkad</a>
-              </li>
-              <li>
-                <a href="#">Registreeru</a>
-              </li>
-            </ul>
+            <?php
+include 'matk-komponendid.php';
+echo annaMenyy();
+?>
           </div>
         </div>
         <div class="row caption-row">
@@ -55,9 +50,20 @@
         </div>
       </div>
     </div>
-    <div class="row" id="sektsioon-matkad">
+    <div class="row" id="sektsioon-matkainfo">
       <div class="container" >
-          <div class="row" id="matkaandmed"></div>
+            <h2>Kontaktandmed</h2>
+            <form action="matk-kontakt-tulemus.php" method="post">
+              <div class="form-group">
+                <label for="name">Nimi:</label>
+                <input type="text" class="form-control" id="name" placeholder="Sisesta nimi" name="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Sisesta email" name="email">
+              </div>    
+              <button type="submit" class="btn btn-primary">Saada</button>
+            </form>
       </div>
     </div>
   </div>

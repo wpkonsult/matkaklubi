@@ -10,7 +10,7 @@ function matkaRida(matk) {
                 '<a href="#">' +
             '</a>' +
                 '<div class="card-body">' +
-                '    <h4 class="card-title">' + matk.nimi + ': ' +  + '</h4>' +
+                '    <h4 class="card-title">' + matk.nimi + ': ' + kuupaevStringina(matk.kuupaev) + '</h4>' +
                 '    <p class="card-text">' + matk.lyhikirjeldus + '</p>' +
                 '    <a href="' + matk.matkaleht + '" class="btn btn-primary">Vaata täpsemalt</a>' +
                 '</div>' +

@@ -2,7 +2,7 @@
     background-image: url('../images/Hills.png');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 980px;;
+    min-height: 480px;
 }
 
 #section-header-row {
@@ -57,6 +57,10 @@
     opacity: 1;
 }
 
+.matkaandmed {
+    padding-top: 20px;
+}
+
 .matkarida {
     letter-spacing: 2.67px;
     font-family: 'Montserrat', sans-serif;
@@ -67,6 +71,9 @@
     object-fit: cover;
     width: 300px;
     height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 .matkarida span {

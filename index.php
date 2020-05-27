@@ -23,13 +23,11 @@
               <img src="./images/matkaklubi_logo.PNG" width="67px">
             </span>
             <span class="logotekst">
-              <?
-                echo 'MATKAKLUBI KÕIGILE ';
-              ?>
+              MATKAKLUBI
             </span>
           </div>
           <div class="col-md-8">
-            <?php
+          <?php
               include 'matk-komponendid.php';
               echo annaMenyy();
             ?>
@@ -50,15 +48,9 @@
         </div>
       </div>
     </div>
-    <div class="row" id="sektsioon-matkainfo">
+    <div class="row matkaandmed" id="sektsioon-matkad">
       <div class="container" >
-          <div class="row" id="matkadetailid">
-            <div>
-              <?php
-                echo 'Siia tuleb matka info, mis on väljastatud PHP-ga';
-              ?>
-            </div>
-          </div>
+          <div class="row" id="matkaandmed"></div>
       </div>
     </div>
   </div>
