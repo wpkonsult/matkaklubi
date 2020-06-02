@@ -56,6 +56,7 @@ echo annaMenyy();
                 Sinu emaili aadress on: <?php echo $_POST["email"]; ?>
                 <?php
                   saadaEmail($_POST);
+                  salvestaKontaktid($_POST);
                 ?>
           </div>
       </div>

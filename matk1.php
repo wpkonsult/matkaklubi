@@ -32,13 +32,18 @@
             <?php
               include 'matk-komponendid.php';
               echo annaMenyy();
+              $matk = loeMatkaAndmed($_GET['id'])[0];
             ?>
           </div>
         </div>
         <div class="row caption-row">
           <div class="col-md-6">
             <div class="caption1">
-              <span>LIIGUTA ENNAST</span>
+              <span>
+                <?php 
+                  echo $matk['nimetus'];
+                ?>
+              </span>
               <div class="butterfly1"></div>
             </div>
             <div class="caption2">
@@ -56,6 +61,7 @@
             <div>
               <?php
                 echo 'Siia tuleb matka info, mis on väljastatud PHP-ga';
+                print_r($matk);
               ?>
             </div>
           </div>
