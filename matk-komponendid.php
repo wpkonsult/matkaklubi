@@ -16,5 +16,17 @@ return '
 }
 
 function saadaEmail($andmed) {
+    $nimi = $andmed['nimi'];
+    $email = $andmed['email'];
+    $sonum = "
+    Tere
+
+    Kontakti võttis $nimi.
+    Kirjuta talle: $email.
+
+    parimatega,
+    Sinu Koduleht
+    ";
+    mail('andresjarviste@gmail.com', 'Kontakt', $sonum);
 
 }
