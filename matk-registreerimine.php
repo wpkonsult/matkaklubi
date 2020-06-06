@@ -61,33 +61,18 @@
       <div class="container" >
           <div class="row" id="matkadetailid">
             <div class="col-md-6">
-              <?php echo $matk['kirjeldus'] ?>
+                <?php 
+                    if (salvestaRegistreerimine($_POST)) {
+                        echo "<h2>Registeerumine õnnestus</h2>";
+                    } else {
+                        echo "<h2>Registreerumine ebaõnnestus</h2>";
+                    }
+                ?>
             </div>
             <div class="col-md-6">
             <img src="<?php echo $matk['pilt1'] ?>" width="80%">
             </div>
           </div>
-      </div>
-    </div>
-    <div class="row" id="sektsioon-matkainfo">
-      <div class="container" >
-            <h2>Registreeru sellele matkale</h2>
-            <form action="matk-registreerimine.php" method="post">
-              <div class="form-group">
-                <label for="name">Nimi:</label>
-                <input type="text" class="form-control" id="name" placeholder="Sisesta nimi" name="nimi">
-              </div>
-              <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Sisesta email" name="email">
-              </div> 
-              <div class="form-group">
-                <label for="markused">Märkused:</label>
-                <textarea class="form-control" id="markused" name="markused" rows="3"></textarea>
-              </div>   
-              <input type="hidden" id="matkId" name="matkId" value="<?php echo $matk['id'] ?>"> 
-              <button type="submit" class="btn btn-primary">Saada</button>
-            </form>
       </div>
     </div>
   </div>
