@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="row caption-row">
-          <div class="col-md-6">
+          <div class="col-md-6 pealkirjad">
             <div class="caption1">
               <span>LIIGUTA ENNAST</span>
               <div class="butterfly1"></div>
@@ -43,7 +43,11 @@
               <div class="butterfly2"></div>
               <span>TULE MATKAMA</span>
             </div>
-
+          </div>
+          <div class="col-md-6">
+            <div class = "matkaja">
+                <img class="matkaja-img" src="./images/matk.png">
+            </div>
           </div>
         </div>
       </div>

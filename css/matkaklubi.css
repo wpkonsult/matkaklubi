@@ -2,15 +2,42 @@
     background-image: url('../images/Hills.png');
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 480px;
+    max-height: 715px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logotekst {
+    font-size: 30px;
+    letter-spacing: 0px;
+    color: #0B0B0B;    
 }
 
 #section-header-row {
-    margin-top: 15px;
+    margin-top: 35px;
+    margin-bottom: 20px;
 }
 
 #sektsioon-matkainfo {
     margin-top: 15px;
+}
+
+.pealkirjad {
+    padding-top: 195px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;    
+}
+
+.pealkirjad .caption1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.pealkirjad .caption2 {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 0px;
 }
 
 .peamenyy {
@@ -18,22 +45,49 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    margin-right: -252px;
 }
 
 .peamenyy li {
     display: inline-block;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    padding: 20px;
+    padding: 20px 0px 20px 20px;
     text-transform: uppercase;
     color: black;
 }
 
 .peamenyy li a{
-    letter-spacing: 2.67px;
+    letter-spacing: 1px;
     color: #000000 !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
+}
+
+.matkaja {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-image: url('../images/shadow.png');
+    background-repeat: no-repeat;
+    background-position: -130px bottom;
+    min-height: 838px;  
+}
+
+.matkaja .matkaja-img {
+    display: block;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -400px;
+}
+
+.matkaja .matkaja-vari {
+    display: block;
+    padding-top: 400px;
+    width: 800px;
+    height: 89px;
 }
 
 .peamenyy li a:hover{
@@ -42,16 +96,8 @@
 }
 
 .caption-row {
-    padding-top: 185px;;
+    padding-top: 10;
 }
-
-.caption1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-    text-transform: uppercase;
-    color: black;
-}
-
 
 .butterfly1 {
     display: inline-block;
@@ -62,7 +108,7 @@
 }
 
 .matkaandmed {
-    padding-top: 20px;
+    padding-top: 250px;
 }
 
 .matkarida {
