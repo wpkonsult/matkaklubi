@@ -43,6 +43,11 @@ function annaAndmebaasiyhendus() {
       die("Ühendamine ebaõnnestus: " . $conn->connect_error);
     }
 
+    if (!$conn->set_charset("utf8")) {
+        die("Error loading character set utf8: %s\n". $conn->error);
+        exit();
+    }
+
     return $conn;
 }
 
@@ -57,14 +62,14 @@ function salvestaKontaktid($andmed) {
     return lisaAndmeRida($sql, $mysqli);
 }
 
-
-
-function loeMatkaAndmed($matkId) {
+function loeMatkaAndmed($matkId = false) {
     $mysqli = annaAndmebaasiyhendus();
-    $id = $mysqli->real_escape_string($matkId);
     $sql = " SELECT id, nimetus, kirjeldus, alguskuup, pilt1, pilt2 
-        FROM matkad WHERE id = $id
-    ";
+        FROM matkad";
+    if ($matkId) {
+        $id = $mysqli->real_escape_string($matkId);
+        $sql = $sql . " WHERE id = $id";
+    }
     $tulemus = $mysqli->query($sql);
 
     $tagasi = [];
@@ -102,5 +107,22 @@ function lisaAndmeRida($sql, $mysqli) {
 
     $mysqli->close();
     return $id;    
+}
+
+function lisaMatk($andmed) {
+    $mysqli = annaAndmebaasiyhendus();
+    $nimetus = $mysqli->real_escape_string($andmed['nimetus']);
+    $kirjeldus = $mysqli->real_escape_string($andmed['kirjeldus']);
+    $alguskuup = $mysqli->real_escape_string($andmed['alguskuup']);    
+    $pilt1 = $mysqli->real_escape_string($andmed['pilt1']);
+    $pilt2 = $mysqli->real_escape_string($andmed['pilt2']);
+
+    $sql = "INSERT INTO matkad (nimetus, kirjeldus, alguskuup, pilt1, pilt2)
+        VALUES ('$nimetus', '$kirjeldus', '$alguskuup', '$pilt1', '$pilt2')
+    ";
+
+    $lisatudRida = lisaAndmeRida($sql, $mysqli);
+    return $lisatudRida;
+
 }
 
