@@ -84,6 +84,28 @@ function loeMatkaAndmed($matkId = false) {
     return $tagasi;
 }
 
+function loeMatkaRegistreerumised($matkId) {
+    $mysqli = annaAndmebaasiyhendus();
+    $sql = " SELECT `id`, `matk_id`, `nimi`, `email`, `kuup`, `markused` 
+        FROM registreerumised";
+    if ($matkId) {
+        $id = $mysqli->real_escape_string($matkId);
+        $sql = $sql . " WHERE matk_id = $id";
+    }
+    $tulemus = $mysqli->query($sql);
+
+    $tagasi = [];
+
+    if ($tulemus->num_rows > 0) {
+        while($rida = $tulemus->fetch_assoc()) {
+            $tagasi[] = $rida;
+        }
+    }
+
+    $mysqli->close();
+    return $tagasi;
+}
+
 function salvestaRegistreerimine($andmed) {
     $mysqli = annaAndmebaasiyhendus();
     $nimi = $mysqli->real_escape_string($andmed['nimi']);
