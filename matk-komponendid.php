@@ -1,12 +1,11 @@
 <?php
+include 'matk-seaded.php';
+
 function annaMenyy() {
 return '    
 <ul class="peamenyy"> 
     <li>' .
 '      <a href=".">Esileht</a>' .
-'    </li>' .
-'    <li>' .
-'      <a href="#">Järgmised matkad</a>' .
 '    </li>' .
 '    <li>' .
 '      <a href="matk-kontakt.php">Kontakt</a>' .
@@ -32,10 +31,12 @@ function saadaEmail($andmed) {
 }
 
 function annaAndmebaasiyhendus() {
-    $servername = "d55765.mysql.zonevs.eu";
-    $username = "d55765_matkaklub";
-    $password = "p6randaLamp7";
-    $dbname = "d55765_matkaklubi";
+    $saladused = annaSaladused();
+    
+    $servername = $saladused['servername'];
+    $username = $saladused['username'];
+    $password = $saladused['password'];
+    $dbname = $saladused['dbname'];
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     
