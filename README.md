@@ -14,14 +14,14 @@ muu võimalus  andmebaasi tabeleid luua skripti abil.
 ## Installeerimine
 Klooni endale see repo.
 
-### Andmebaasin installeerimine
+### Andmebaasi installeerimine
 Loome andmebaasi SQL skriptiga. Selleks ava andmebaas phpMyAdminiga ja impordi 
-andmebaasiskirpt failist /sql/matkaklubi.sql
+andmebaasiskirpt failist `/sql/matkaklubi.sql`
 
 ### Andmebaasi ühenduse konfigureerimine
-Kopeeri fail /matk-seaded-naide.php failiks /matk-seaded.php
+Kopeeri fail `/matk-seaded-naide.php` failiks `/matk-seaded.php`
 Asenda funktsiooni annaSaladused tagastavas objektis MySQL ühenduse loomiseks sinu andmebaasi infoga. 
-Ehk - asneda servername, username, password, dbname muutujate väärtused.
+Ehk - asneda `servername, username, password, dbname` muutujate väärtused.
 
 ### Lae faili sisu veebiserverisse
 FTP abil lae terve projekt veebiserverisse. 
