@@ -21,7 +21,7 @@ function lisaUusMatk() {
         'pilt2' => $_POST['pilt2'],
     ]);
 
-    if (count($lisatudId) > 0) {
+    if ($lisatudId > 0) {
         tagastaAndmed(json_encode(['matkId' => $lisatudId]));
     } else {
         tagastaViga('Matka lisamine ebaõnnestus');

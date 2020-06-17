@@ -21,11 +21,11 @@ andmebaasiskirpt failist `/sql/matkaklubi.sql`
 ### Andmebaasi ühenduse konfigureerimine
 Kopeeri fail `/matk-seaded-naide.php` failiks `/matk-seaded.php`
 Asenda funktsiooni annaSaladused tagastavas objektis MySQL ühenduse loomiseks sinu andmebaasi infoga. 
-Ehk - asneda `servername, username, password, dbname` muutujate väärtused.
+Ehk - asenda `servername, username, password, dbname` muutujate väärtused.
 
 ### Lae faili sisu veebiserverisse
 FTP abil lae terve projekt veebiserverisse. 
 
-Kui laadisid FTP faili enda serverisse (näiteks minu.server.ee), siis 
+Kui laadisid FTP faili enda serverisse (näiteks minu.server.ee) kataloogi matkaklubi, siis 
 - matkaklubi esileht asub aadressil [minu.server.ee/matkaklubi](minu.server.ee/matkaklubi)
 - admin - leht asub aadressil [minu.server.ee/matkaklubi/admin](minu.server.ee/matkaklubi/admin)

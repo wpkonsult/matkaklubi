@@ -1,17 +1,21 @@
 var andmed = {
     matkad: [],
-    registeerumised: [],
+    registeerumised: {},
 }
 
-function salvestaMatkad(matkaAndmed) {
+function salvestaMatkadLehitsejas(matkaAndmed) {
     andmed.matkad = matkaAndmed.map(
         function(yksMatk) {
             return yksMatk;
         });
 }
 
-function salvestaRegistreerumised(regAndmed) {
-    andmed.registeerumised = regAndmed.map(
+function salvestaRegistreerumisedLehitsejas(matkId, regAndmed) {
+    if (!matkId) {
+        return false;
+    }
+
+    andmed.registeerumised[matkId] = regAndmed.map(
         function(yksReg) {
             return yksReg;
         }
@@ -186,42 +190,36 @@ function naitaVaadet(vaade) {
     document.getElementById("vaade").innerHTML = vaade;
 }
 
-function loeMatkad() {
-    $.get(
-        'http://wpkonsult.ee/oppurid/veeb30/matkaklubi/admin/api/matkad/',
-        function(andmed, status) {
-            console.log('Staatus: ' + status);
-            salvestaMatkad(andmed);
-            naitaVaadet(matkadHTML(andmed));
-        }
-    );
-}
-
 function loeRegistreerimised(matkId) {
     $.get(
-        'http://wpkonsult.ee/oppurid/veeb30/matkaklubi/admin/api/registreerumised?matkId=' + matkId,
+        'api/registreerumised?matkId=' + matkId,
         function(andmed, status) {
-            console.log(andmed);
-            salvestaRegistreerumised(andmed);
+            salvestaRegistreerumisedLehitsejas(matkId, andmed);
             naitaVaadet(registreerumisedHtml(andmed));
         }
     );
 }
 
 function lisaMatk() {
-    console.log('Lisa matka andmed');
     var vormMatkAndmed = $('#vormMatk').serializeArray();
-    console.log(vormMatkAndmed);
     $.ajax({  
         type: "POST",  
         url: "api/matkad/",  
         data: vormMatkAndmed,  
         success: function(value) {  
-            console.log(value);
-            //loeMatkad();
+            loeMatkad();
         }
     });
+}
 
+function loeMatkad() {
+    $.get(
+        'api/matkad/',
+        function(andmed, status) {
+            salvestaMatkadLehitsejas(andmed);
+            naitaVaadet(matkadHTML(andmed));
+        }
+    );
 }
 
 loeMatkad();
