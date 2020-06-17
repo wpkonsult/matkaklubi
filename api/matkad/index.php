@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         tagastaViga('Lisamine ebaõnnestus');
     }
 
-} else {
-    $data = loeMatkaAndmed($_GET['id']);
+} else {    
+    $data = loeMatkaAndmed($_GET['id'] ?? false);
     
     $json = json_encode($data);
     if ($json === false) {

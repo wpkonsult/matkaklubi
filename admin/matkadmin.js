@@ -66,7 +66,13 @@ function registreerumisedHtml(reg) {
     }
     return `
     <div class="row vaatemenyy">
-    <a href="#" onclick="naitaVaadet(matkadHTML(andmed.matkad))" class="btn btn-primary">Matkad</a>
+        <a  
+            href="#" 
+            onclick="naitaVaadet(matkadHTML(andmed.matkad))" 
+            class="btn btn-secondary"
+        >
+            Matkad
+        </a>
     </div>
     <div class="row">
         <ul class="list-group list-group-flush">
@@ -84,12 +90,96 @@ function matkadHTML(matkad) {
 
     return vaade = `
     <div class="row vaatemenyy">
-        <a href="#" class="btn btn-primary">Lisa matk</a>
+        <a 
+            href="#" 
+            class="btn btn-primary"
+            onClick="naitaVaadet(matkaMuutmineHTML())"
+        >
+            Lisa matk
+        </a>
     </div>
     <div class="row">
         ${kaardid}
     </div>
     `;
+}
+
+function matkaMuutmineHTML(matk = false) {
+    var tegevus = 'Lisa matk';
+    var nuppTeks = 'Lisa';
+    var kinnitamine = 'lisaMatk()';
+    if (matk) {
+        tegevus = 'Muuda matka';
+        nuppTeks = 'Muuda';
+        kinnitamine = 'muudaMatka()';
+    }
+
+    return vaade = `
+    <div class="row vaatemenyy">
+        <div class="container">
+            <a  
+                href="#" 
+                onclick="naitaVaadet(matkadHTML(andmed.matkad))" 
+                class="btn btn-outline-secondary"
+            >
+                Matkad
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>${tegevus}</h2>
+            <form id="vormMatk" onsubmit="event.preventDefault()">
+                <div class="form-group">
+                    <label for="matkNimi">Matka nimetus </label>
+                    <input 
+                        class="form-control" 
+                        type="text" 
+                        id="matkNimi" 
+                        name="nimi" 
+                        required
+                    />
+                    <label for="matkAlguskuup">Matka alguskuupäev </label>
+                    <input 
+                        class="form-control" 
+                        type="text" 
+                        id="matkAlguskuup" 
+                        name="alguskuup"
+                        required
+                    />
+                    <label for="matkPilt1">Viide matka peapildile </label>
+                    <input 
+                        class="form-control" 
+                        type="text" 
+                        id="matkPilt1" 
+                        name="pilt1"
+                        required
+                    />
+                    <label for="matkPilt2">Viide matka täiendavale pildile </label>
+                    <input 
+                        class="form-control" 
+                        type="text" 
+                        id="matkPilt2" 
+                        name="pilt2"
+                    />
+                    <label for="kirjeldus">Kirjeldus</label>
+                    <textarea 
+                        class="form-control"
+                        rows=5
+                        id="kirjeldus"
+                        name="kirjeldus"
+                    ></textarea>
+                </div>
+                <button 
+                    class="btn btn-primary"
+                    onClick="${kinnitamine}"
+                >
+                    ${nuppTeks}
+                </button> 
+            </form>
+        </div>
+    </div>
+    `;
+
 }
 
 function naitaVaadet(vaade) {
@@ -116,6 +206,22 @@ function loeRegistreerimised(matkId) {
             naitaVaadet(registreerumisedHtml(andmed));
         }
     );
+}
+
+function lisaMatk() {
+    console.log('Lisa matka andmed');
+    var vormMatkAndmed = $('#vormMatk').serializeArray();
+    console.log(vormMatkAndmed);
+    $.ajax({  
+        type: "POST",  
+        url: "api/matkad/",  
+        data: vormMatkAndmed,  
+        success: function(value) {  
+            console.log(value);
+            //loeMatkad();
+        }
+    });
+
 }
 
 loeMatkad();
